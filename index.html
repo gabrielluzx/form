@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Formulário</title>
+	    <link rel="stylesheet" type="" href="./style.css" media="only screen"/>
+	    <link rel="apple-touch-icon" sizes="180x180" href="./content/ico/">
+		<link rel="icon" type="image/png" sizes="32x32" href="./content/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="./content/ico/favicon-16x16.png">
+		<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+		<link rel="manifest" href="/site.webmanifest">
+	</head>
+	<body>
+		<main id="block">
+			<article>
+				<header>
+					<h1 class="title">VenTech</h1>
+					<p class="text">Preencha os campos para criar sua conta.</p>			
+				</header>
+				<section id="form-container">
+					<form method="get" action="./teste.html">
+						<div class="output-container">
+							<output id="output-message">&#x00A0;</output>
+						</div>
+
+						<div class="input-container">
+							<img src="./content/icons/user.png" alt="" height="32" width="32" class="icon" aria-hidden="true">
+							<input type="text" name="userName" id="userName"  class="text-input" minlength="3" maxlength="40" required placeholder=" " pattern="[a-zA-Z\s]{3,}"/>
+							<label for="userName"  aria-label="Digite seu nome">Nome</label>							
+						</div>
+
+						<div class="input-container">
+							<img src="./content/icons/mail.png" alt="" height="32" width="32" class="icon" aria-hidden="true">
+							<input type="email" name="userEmail" id="userEmail" class="text-input" required placeholder=" " pattern="[a-z\d\s]+@[a-z]{4,}\.[a-z]{2,}(\.[a-z]{2})?"/>	
+							<label for="userEmail"  aria-label="Digite seu email">Email</label>												
+						</div>
+
+						<div class="input-container">
+							<img src="./content/icons/padlock.png" alt="" height="32" width="32" class="icon" aria-hidden="true">							
+							<input type="password" name="userPassword" id="userPassword" class="text-input" required placeholder=" " minlength="8" maxlength="12"
+							 pattern="[\w\d]{8,12}"/>	
+							 <label for="userPassword"  aria-label="Digite sua senha">Senha</label>							
+						</div>
+
+						<div class="input-container">
+							<img src="./content/icons/padlock.png" alt="" height="32" width="32" class="icon" aria-hidden="true">
+							<input type="password" name="userConfirmPassword" id="userConfirmPassword" class="text-input" onkeyup="passwordMatchs()" required placeholder=" " minlength="8" maxlength="12" pattern="[\w\d]{8,12}"/>
+							<label for="userConfirmPassword"  aria-label="Confirme sua senha">Confirme sua senha</label>													
+						</div>
+
+						<div class="input-container">
+							<label for="policyPrivacyCheckbox">
+								<input type="checkbox" name="policyPrivacyCheckbox" id="policyPrivacyCheckbox" required/>
+								<small>Aceito os termos de política e privacidade.</small>
+							</label>
+						</div>
+
+						<div id="btns-container">
+							<button type="submit"  aria-label="Registrar usuário" aria-pressed="false">Registrar</button>
+							<button type="reset" aria-label="Limpar Formulário" aria-pressed="false">Limpar</button>				
+						</div>
+					</form>			
+				</section>			
+			</article>		
+		</main>	
+		<script src="./app.js"></script>
+	</body>
+</html>
