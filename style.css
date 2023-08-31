@@ -9,36 +9,36 @@
 	font-family: 'Roboto', verdana, sans-serif;
 	--dark: #191919;
 	--gradient: linear-gradient(to right bottom, white 20%, blue);
+	--space-small: 0.625rem; /*10px*/
+	--space-default: 1.25rem;/*20px*/
+	--radius-default: 0.3125rem;
 }
 body {
 	height: 100vh;
-	background-image: var(--gradient);
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	background: gray url("./content/images/bg.jpg") center center / cover fixed;
 }
 main {
-	width: clamp(100px, 100%, 400px);
-	background-color: white;
-	box-shadow: 3px 3px 5px var(--dark);
-	padding: 1.25rem;
-	border-radius: 5px;
+	height: 100vh;
+	max-width: max(50vw, 400px);
+	background-color: #ffffff;
+	padding: var(--space-default);
 }
 .title {
+	font-size: 2em;
 	text-align: center;
-	padding: 1.25rem 0;
+	padding: var(--space-default) 0;
 }
 .text {
+	text-align: center;
 	padding: calc(1.25rem / 2);
 }
-output {
-	color: #993e3e;
-	text-align: center;
-	font-weight: bold;
-}
-.input-container {
-	margin:  1.55rem;
+.input-group {
+	width: 80%;
+	margin: 5vh auto;
 	position: relative;
+}
+.input-group:nth-child(5) {
+	text-align: center;
 }
 .icon,
 .output,
@@ -47,9 +47,9 @@ output {
 }
 .icon {
 	position: absolute;
-	inset: 12% 2%;
+	inset: 10px 10px;
 }
- label:not([for$="box"]) {
+ label:not([for*="box"]) {
 	display: block;
 	color: var(--dark);
 	position: absolute;
@@ -58,10 +58,10 @@ output {
 	transition: inset .6s ease, color .6s ease;
 }
 .text-input {
+	height: 50px;
 	width: 100%;
-	border: 2px groove var(--dark);
-	padding: 11px 10px 11px 45px;
-	border-radius: 4px;
+	border: 2px groove gray;
+	padding: 11px 10px 11px 50px;
 	margin: 0 auto;
 	cursor: pointer;
 }
@@ -70,32 +70,37 @@ output {
 }
 .text-input:placeholder-shown + label {
 	color: gray;
-	inset: 30% 0% 0% 15%;
+	inset: 16px 0% 0% 50px;
 }
-#btns-container {
+#buttons-group {
 	display: flex;
 	justify-content: center;
 }
 button {
+	width: 30%;
 	color: white;
 	cursor: pointer;
 	font-weight: bold;
 	border: none;
-	border-radius: 4px;
 	margin:0 5px;
 }
 button[type="submit"] {
 	background-color: #2188c4;
-	padding: 10px;
+	padding: var(--space-small);
 }
 button[type="submit"]:hover {
 	background-color: #0c3146;
 }
 button[type="reset"] {
 	background-color: #860101;
-	padding: 10px 20px;
+	padding: var(--space-small) var(--space-default);
 }
 button[type="reset"]:hover {
 	background-color: #2b0101;
+}
+@media only screen and (max-width: 600px) {
+	main {
+		margin: 0 auto;
+	}
 }
 
